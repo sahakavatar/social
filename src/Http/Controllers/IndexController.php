@@ -9,42 +9,40 @@
  *
  */
 
-namespace Btybug\Social\Http\Controllers;
+namespace Sahak\Social\Http\Controllers;
 
+use Sahak\Social\Models\Test;
+use Sahak\Social\Models\Validations;
+use Btybug\btybug\Helpers\dbhelper;
+use Btybug\btybug\Helpers\helpers;
 use App\Http\Controllers\Controller;
-use Btybug\btybug\Models\Painter\Painter;
-use Btybug\Social\Services\FieldService;
-use Illuminate\Http\Request;
-use Btybug\btybug\Models\ContentLayouts\ContentLayouts;
 use Btybug\btybug\Models\ExtraModules\Structures;
 use Btybug\btybug\Models\Routes;
-use Btybug\btybug\Services\CmsItemReader;
-use Btybug\Social\Http\Requests\Structure\FieldCreateRequest;
-use Btybug\Social\Http\Requests\Structure\FormCreateRequest;
-use Btybug\Social\Http\Requests\Structure\FormSettingsUpdateRequest;
-use Btybug\Social\Http\Requests\Structure\PageEditRequest;
-use Btybug\Social\Http\Requests\Structure\SavePageSettingsRequest;
-use Btybug\Social\Repository\AdminPagesRepository;
-use Btybug\Social\Repository\FieldsRepository;
-use Btybug\Social\Repository\FormsRepository;
-use Btybug\Social\Repository\VersionsRepository;
-use Btybug\Social\Services\FieldValidationService;
-use Btybug\Social\Services\FormService;
-use Btybug\Social\Services\StructureService;
-use Btybug\btybug\Repositories\AdminsettingRepository;
-use Btybug\User\Services\RoleService;
-use Btybug\User\Services\UserService;
+use Illuminate\Http\Request;
+use Btybug\btybug\Repositories\HookRepository;
 
 /**
- * Class ModulesController
- * @package Btybug\Modules\Models\Http\Controllers
+ * Class TestController
+ * @package App\ExtraModules\Test\Http\Controllers
  */
 class IndexController extends Controller
 {
+    /**
+     * TestController constructor.
+     */
+    public function __construct()
+    {
+
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getIndex()
     {
         return view('social::index');
     }
+
 
 
 }

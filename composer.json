@@ -1,19 +1,20 @@
 {
-    "name": "btybug/social",
-    "description": "Social Module Description",
-    "authors": [
-        {
-            "name": "Sahak",
-            "email": "hakobyan.sahak88@gmail.com"
-        }
-    ],
-    "type": "module",
-    "route": "social",
-    "require": {},
-	"autoload": {
-        "psr-4": {
-            "Btybug\\Social\\": "src/"
-        }
+  "name": "sahak.avatar/social",
+  "description": "This is a little neat helper for the Social network",
+  "type": "package",
+  "license": "Apache2",
+  "require": {
+
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Sahak\\Social\\": "src/"
     },
-    "tables":[]
+    "files": [
+      "src/index.php"
+    ]
+  },
+  "version": "1.0.0"
 }

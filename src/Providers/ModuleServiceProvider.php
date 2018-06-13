@@ -1,47 +1,60 @@
 <?php
+/**
+ * Copyright (c) 2017.
+ * *
+ *  * Created by PhpStorm.
+ *  * User: Edo
+ *  * Date: 10/3/2016
+ *  * Time: 10:44 PM
+ *
+ */
 
-namespace Btybug\Social\Providers;
+namespace Sahak\Social\Providers;
 
+use Btybug\btybug\Models\Routes;
 use Illuminate\Support\ServiceProvider;
+
 
 class ModuleServiceProvider extends ServiceProvider
 {
+
+
     /**
-     * Bootstrap the module services.
+     * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__ . '/../Resources/Lang', 'social');
-        $this->loadViewsFrom(__DIR__ . '/../Resources/Views', 'social');
-
-
-
+        $this->loadTranslationsFrom(__DIR__ . '/../views', 'AutoSocial');
+        $this->loadViewsFrom(__DIR__ . '/../views', 'AutoSocial');
         \Eventy::action('admin.menus', [
             "title" => "Social",
             "custom-link" => "#",
-            "icon" => "fa fa-ils",
+            "icon" => "fa fa-gavel",
             "is_core" => "yes",
             "children" => [
                 [
-                    "title" => "index",
+                    "title" => "Social",
                     "custom-link" => "/admin/social",
                     "icon" => "fa fa-angle-right",
-                    "is_core" => "yes",
-                ],
+                    "is_core" => "yes"
+                ]
             ]]);
-        //TODO; remove when finish all
-        \Btybug\btybug\Models\Routes::registerPages('btybug/social');
+        Routes::registerPages('sahak.avatar/social');
     }
 
+
     /**
-     * Register the module services.
+     * Register any application services.
      *
      * @return void
      */
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+
     }
+
 }
+

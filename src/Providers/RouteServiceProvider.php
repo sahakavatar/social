@@ -1,9 +1,18 @@
 <?php
+/**
+ * Copyright (c) 2017.
+ * *
+ *  * Created by PhpStorm.
+ *  * User: Edo
+ *  * Date: 10/3/2016
+ *  * Time: 10:44 PM
+ *
+ */
 
-namespace Btybug\Social\Providers;
+namespace Sahak\Social\Providers;
 
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -14,7 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Btybug\Social\Http\Controllers';
+    protected $namespace = 'Sahak\Social\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -37,6 +46,8 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapWebRoutes();
 
+        $this->mapApiRoutes();
+
         //
     }
 
@@ -58,6 +69,7 @@ class RouteServiceProvider extends ServiceProvider
                 'prefix' => 'admin/social',
                 'namespace' => $this->namespace,
             ], function ($router) {
+                //TODO fix path when done
                 require __DIR__ . '/../Routes/web.php';
             });
         });
