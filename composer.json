@@ -2,7 +2,6 @@
   "name": "sahak.avatar/social",
   "description": "This is a little neat helper for the Social network",
   "type": "package",
-  "license": "Apache2",
   "require": {
 
   },
